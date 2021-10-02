@@ -5,3 +5,4 @@ Restaurant management application made with Spring Boot and Spring Cloud. This r
 ## Authors
 
 - [@MarcoMnrq](https://www.github.com/MarcoMnrq)
+- [@Sebastian242811](https://www.github.com/Sebastian242811)
