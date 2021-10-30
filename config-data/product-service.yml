@@ -1,12 +1,10 @@
 # DataSource Configuration
 spring:
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://localhost:3306/restcode?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC&userLegacyDatetimeCode=false
     username: root
     password: root
-  autoconfigure:
-    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
 
 # JPA properties
   jpa:
