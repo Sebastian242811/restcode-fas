@@ -21,9 +21,6 @@ public class Product extends AuditModel {
 
     private String description;
 
-    @Transient()
-    private Restaurant restaurant;
-
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "category_id")
     private Category category;

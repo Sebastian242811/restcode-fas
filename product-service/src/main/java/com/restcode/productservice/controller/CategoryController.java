@@ -16,8 +16,8 @@ public class CategoryController {
     private final CategoryService categoryService;
 
     @PostMapping()
-    public Category create(@RequestBody() Category category) {
-        return categoryService.createCategory(category);
+    public Category create(@RequestBody() Category category, @RequestParam() Long restaurantId) {
+        return categoryService.createCategory(category, restaurantId);
     }
 
     @GetMapping()

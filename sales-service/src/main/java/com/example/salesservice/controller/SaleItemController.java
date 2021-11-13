@@ -17,8 +17,8 @@ public class SaleItemController {
     private final SaleItemService service;
 
     @PostMapping()
-    public SaleItem create(@RequestBody() SaleItem saleItem, @RequestParam() Long saleId) {
-        return service.create(saleItem, saleId);
+    public SaleItem create(@RequestBody() SaleItem saleItem, @RequestParam() Long saleId, @RequestParam() Long productId) {
+        return service.create(saleItem, saleId, productId);
     }
 
     @GetMapping()

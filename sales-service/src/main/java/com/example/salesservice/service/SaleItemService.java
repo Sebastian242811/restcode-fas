@@ -1,5 +1,6 @@
 package com.example.salesservice.service;
 
+import com.example.salesservice.domain.client.ProductClient;
 import com.example.salesservice.domain.model.SaleItem;
 import com.example.salesservice.domain.repository.SaleItemRepository;
 import lombok.AllArgsConstructor;
@@ -13,9 +14,11 @@ import java.util.List;
 public class SaleItemService {
     private final SaleItemRepository repository;
     private final SaleService saleService;
+    private final ProductClient productClient;
 
-    public SaleItem create(SaleItem item, Long saleId) {
+    public SaleItem create(SaleItem item, Long saleId, Long productId) {
         item.setSale(saleService.getOne(saleId));
+        item.setProduct(productClient.getOne(productId));
         return repository.save(item);
     }
 

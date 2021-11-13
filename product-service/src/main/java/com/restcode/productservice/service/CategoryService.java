@@ -1,6 +1,7 @@
 package com.restcode.productservice.service;
 
 
+import com.restcode.productservice.client.RestaurantClient;
 import com.restcode.productservice.domain.model.Category;
 import com.restcode.productservice.domain.repository.CategoryRepository;
 import lombok.AllArgsConstructor;
@@ -13,9 +14,11 @@ import java.util.List;
 @AllArgsConstructor
 public class CategoryService {
     private final CategoryRepository categoryRepository;
+    private final RestaurantClient restaurantClient;
 
-    public Category createCategory(Category category) {
+    public Category createCategory(Category category, Long restaurantId) {
         category.setEnabled(true);
+        category.setRestaurant(restaurantClient.getOne(restaurantId));
         return categoryRepository.save(category);
     }
 

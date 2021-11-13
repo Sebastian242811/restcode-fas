@@ -1,5 +1,6 @@
 package com.restcode.productservice.domain.model;
 
+import com.restcode.productservice.domain.reference.Restaurant;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -15,4 +16,7 @@ public class Category {
     private boolean enabled;
 
     private String name;
+
+    @Transient
+    private Restaurant restaurant;
 }

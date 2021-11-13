@@ -1,6 +1,7 @@
 package com.restcode.productservice.service;
 
 
+import com.restcode.productservice.client.RestaurantClient;
 import com.restcode.productservice.domain.model.Product;
 import com.restcode.productservice.domain.repository.ProductRepository;
 import lombok.AllArgsConstructor;
