@@ -1,7 +1,6 @@
 package com.example.salesservice.service;
 
 import com.example.salesservice.domain.model.Sale;
-import com.example.salesservice.domain.model.SaleItem;
 import com.example.salesservice.domain.repository.SaleRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -13,8 +12,6 @@ import java.util.List;
 @AllArgsConstructor
 public class SaleService {
     private final SaleRepository repository;
-
-    private final SaleItemService saleItemService;
 
     public Sale create(Sale sale) {
         return repository.save(sale);
