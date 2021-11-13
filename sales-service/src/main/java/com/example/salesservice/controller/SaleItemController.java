@@ -1,5 +1,6 @@
 package com.example.salesservice.controller;
 
+import com.example.salesservice.domain.model.Sale;
 import com.example.salesservice.domain.model.SaleItem;
 import com.example.salesservice.service.SaleItemService;
 import lombok.AllArgsConstructor;
@@ -14,6 +15,11 @@ import java.util.List;
 public class SaleItemController {
 
     private final SaleItemService service;
+
+    @PostMapping()
+    public SaleItem create(@RequestBody() SaleItem saleItem, @RequestParam() Long saleId) {
+        return service.create(saleItem, saleId);
+    }
 
     @GetMapping()
     public List<SaleItem> getAll() {

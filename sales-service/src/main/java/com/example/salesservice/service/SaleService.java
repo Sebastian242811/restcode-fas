@@ -1,6 +1,7 @@
 package com.example.salesservice.service;
 
 import com.example.salesservice.domain.model.Sale;
+import com.example.salesservice.domain.model.SaleItem;
 import com.example.salesservice.domain.repository.SaleRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -16,9 +17,6 @@ public class SaleService {
     private final SaleItemService saleItemService;
 
     public Sale create(Sale sale) {
-        sale.getItems().forEach(saleItem -> {
-            saleItemService.create(saleItem);
-        });
         return repository.save(sale);
     }
 
@@ -29,7 +27,7 @@ public class SaleService {
     }
 
     public Sale getOne(Long id) {
-        return repository.getById(id);
+        return repository.findById(id).orElse(null);
     }
 
     public List<Sale> getAll() {

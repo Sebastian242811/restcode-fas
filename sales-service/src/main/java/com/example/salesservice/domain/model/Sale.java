@@ -16,6 +16,6 @@ public class Sale extends AuditModel{
 
     private String currency;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "sale")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "sale", fetch = FetchType.EAGER)
     private List<SaleItem> items;
 }

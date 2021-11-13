@@ -3,6 +3,7 @@ package com.restcode.restaurantservice.service;
 
 import com.restcode.restaurantservice.domain.model.Restaurant;
 import com.restcode.restaurantservice.domain.repository.RestaurantRepository;
+import javassist.NotFoundException;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -26,7 +27,7 @@ public class RestaurantService {
     }
 
     public Restaurant getOne(Long id) {
-        return repository.getById(id);
+        return repository.findById(id).orElse(null);
     }
 
     public List<Restaurant> getAll() {

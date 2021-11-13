@@ -12,8 +12,10 @@ import java.util.List;
 @AllArgsConstructor
 public class SaleItemService {
     private final SaleItemRepository repository;
+    private final SaleService saleService;
 
-    public SaleItem create(SaleItem item) {
+    public SaleItem create(SaleItem item, Long saleId) {
+        item.setSale(saleService.getOne(saleId));
         return repository.save(item);
     }
 
@@ -22,7 +24,7 @@ public class SaleItemService {
     }
 
     public SaleItem getOne(Long id){
-        return repository.getById(id);
+        return repository.findById(id).orElse(null);
     }
 
     public SaleItem update(SaleItem item) {

@@ -1,5 +1,6 @@
 package com.restcode.productservice.domain.model;
 
+import com.restcode.productservice.domain.reference.Restaurant;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -19,6 +20,9 @@ public class Product extends AuditModel {
     private Double price;
 
     private String description;
+
+    @Transient()
+    private Restaurant restaurant;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "category_id")
