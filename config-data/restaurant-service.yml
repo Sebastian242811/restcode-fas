@@ -25,6 +25,9 @@ logging:
 # Server Port
 server:
     port: 8085
+    error:
+        include-message: always
+        include-binding-errors: always
 
 
 # Eureka client
