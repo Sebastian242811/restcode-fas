@@ -33,7 +33,7 @@ Eureka:
       defaultZone: http://localhost:8099/eureka/
 
 #Hystrix
-feign:
+Feign:
   hystrix:
     enabled: true
   ribbon:
