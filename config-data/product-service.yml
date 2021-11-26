@@ -36,6 +36,10 @@ Eureka:
 feign:
   hystrix:
     enabled: true
+  ribbon:
+    enabled: true
+  circuitbreaker:
+    enabled: true
 management:
   endpoints:
     web:
