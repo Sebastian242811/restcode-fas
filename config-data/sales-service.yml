@@ -1,12 +1,12 @@
 # DataSource Configuration
 spring:
     datasource:
-        url: database-restcode.ctuwinjucw8x.us-east-1.rds.amazonaws.com
-        username: admin
-        password: adminrestcode
-        #url: jdbc:mysql://localhost:3306/restcode?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC&userLegacyDatetimeCode=false
-        #username: root
-        #password: root
+        #url: database-restcode.ctuwinjucw8x.us-east-1.rds.amazonaws.com
+        #username: admin
+        #password: adminrestcode
+        url: jdbc:mysql://localhost:3306/restcode?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC&userLegacyDatetimeCode=false
+        username: root
+        password: root
 
 # JPA properties
     jpa:
